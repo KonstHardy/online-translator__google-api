@@ -12,10 +12,6 @@
     <div class="wrapper">
       <form class="form">
         <div class="form__lang-block">
-          <!-- <select>
-            <option value="en">English</option>
-            <option value="ru">Russian</option>
-          </select> -->
           <label class="form__label" for="inputText">Input text</label>
           <textarea
             class="form__text"
@@ -25,8 +21,12 @@
             rows="10"
           ></textarea>
         </div>
-        <!-- <button class="form__btn" type="submit">Translate</button> -->
-        <input type="button" onclick="translation()" value="Translation" />
+        <input
+          class="form__btn"
+          type="button"
+          onclick="translation()"
+          value="Translation"
+        />
         <div class="form__lang-block">
           <label class="form__label" for="targetLang">Translate to</label>
           <select class="form__select" id="targetLang">
