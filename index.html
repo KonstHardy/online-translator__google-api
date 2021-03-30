@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
@@ -24,7 +25,8 @@
             rows="10"
           ></textarea>
         </div>
-        <button class="form__btn">Translate</button>
+        <!-- <button class="form__btn" type="submit">Translate</button> -->
+        <input type="button" onclick="translation()" value="Translation" />
         <div class="form__lang-block">
           <label class="form__label" for="lang__to">Translate to</label>
           <select class="form__select" id="lang__to">
