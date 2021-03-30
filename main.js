@@ -3,7 +3,7 @@ function translation() {
   const baseUrl = "https://translation.googleapis.com/language/translate/v2";
 
   let requestData = {
-    q: document.getElementById("inputText").value,
+    q: document.getElementById("textInput").value,
     target: document.getElementById("targetLang").value,
   };
 
@@ -22,7 +22,7 @@ function translationResponse() {
     responseJSON["data"]["translations"].forEach(function (element) {
       translatedText += element["translatedText"] + "\n";
     });
-    document.getElementById("outputText").value = translatedText;
+    document.getElementById("textOutput").value = translatedText;
   }
 }
 
