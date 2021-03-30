@@ -34,6 +34,9 @@ body {
 }
 .form__label {
   text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
 }
 .form__text {
   display: block;
@@ -43,11 +46,7 @@ body {
   margin-top: 15px;
   border-radius: 15px;
   border: 1px solid #000;
-  font-size: 16px;
-  /* border-top: 2px solid #000;
-  border-left: none;
-  border-right: none;
-  border-bottom: none; */
+  font-size: 18px;
   outline: none;
   resize: none;
 }
@@ -61,6 +60,7 @@ body {
   border-radius: 10px;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
   outline: none;
 }
