@@ -16,11 +16,11 @@
             <option value="en">English</option>
             <option value="ru">Russian</option>
           </select> -->
-          <label class="form__label" for="lang__from">Input text</label>
+          <label class="form__label" for="inputText">Input text</label>
           <textarea
             class="form__text"
             name="text"
-            id="lang__from"
+            id="inputText"
             cols="30"
             rows="10"
           ></textarea>
@@ -28,12 +28,12 @@
         <!-- <button class="form__btn" type="submit">Translate</button> -->
         <input type="button" onclick="translation()" value="Translation" />
         <div class="form__lang-block">
-          <label class="form__label" for="lang__to">Translate to</label>
-          <select class="form__select" id="lang__to">
+          <label class="form__label" for="targetLang">Translate to</label>
+          <select class="form__select" id="targetLang">
             <option value="en">English</option>
             <option value="ru">Russian</option>
           </select>
-          <input class="form__text" id="translated" type="text" />
+          <input class="form__text" id="outputText" type="text" />
         </div>
       </form>
     </div>

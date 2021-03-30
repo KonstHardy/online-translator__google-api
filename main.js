@@ -1,19 +1,17 @@
 function translation() {
-  let key = "AIzaSyBttL3_rUfMaP8vZQazT8bCd5XhHkmR4lA";
-  let url = "https://translation.googleapis.com/language/translate/v2";
+  let API_KEY = "AIzaSyBttL3_rUfMaP8vZQazT8bCd5XhHkmR4lA";
+  let baseUrl = "https://translation.googleapis.com/language/translate/v2";
 
-  var content = {
-    q: document.getElementById("lang__from").value,
-    target: document.getElementById("lang__to").value,
+  var requestData = {
+    q: document.getElementById("inputText").value,
+    target: document.getElementById("targetLang").value,
   };
 
-  // console.log("test");
-
-  ajaxRequest(
+  sendRequest(
     "POST",
-    url + "?key=" + key,
+    baseUrl + "?key=" + API_KEY,
     translationResponse,
-    JSON.stringify(content)
+    JSON.stringify(requestData)
   );
 }
 
@@ -24,16 +22,16 @@ function translationResponse() {
     response_json["data"]["translations"].forEach(function (element) {
       translated_text += element["translatedText"] + "\n";
     });
-    document.getElementById("translated").value = translated_text;
+    document.getElementById("outputText").value = translated_text;
   }
 }
 
-function ajaxRequest(method, url, handlerFunction, content) {
+function sendRequest(method, url, handlerFunction, requestData) {
   var xhttp = new XMLHttpRequest();
   xhttp.open(method, url);
   xhttp.onreadystatechange = handlerFunction;
   if (method == "POST") {
-    xhttp.send(content);
+    xhttp.send(requestData);
   } else {
     xhttp.send();
   }
