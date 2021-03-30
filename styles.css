@@ -7,6 +7,7 @@ html {
   box-sizing: inherit;
 }
 body {
+  font-family: Helvetica, sans-serif;
   min-width: 320px;
   margin: 0;
   background: #f7f8fb;
@@ -19,24 +20,31 @@ body {
 }
 .form {
   padding: 25px;
-  border-radius: 20px;
+  border-radius: 30px;
   background: #adb2df;
 }
 .form__lang-block {
   padding: 20px;
   height: 300px;
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 20px;
+}
+.form__label {
+  text-transform: uppercase;
 }
 .form__text {
   display: block;
   width: 100%;
-  height: 90%;
+  height: 87%;
+  padding: 15px;
   margin-top: 15px;
-  border-top: 2px solid #000;
+  border-radius: 15px;
+  border: 1px solid #000;
+  /* border-top: 2px solid #000;
   border-left: none;
   border-right: none;
-  border-bottom: none;
+  border-bottom: none; */
+
   outline: none;
   resize: none;
 }
