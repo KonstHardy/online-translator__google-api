@@ -1,8 +1,8 @@
 function translation() {
-  let API_KEY = "AIzaSyBttL3_rUfMaP8vZQazT8bCd5XhHkmR4lA";
-  let baseUrl = "https://translation.googleapis.com/language/translate/v2";
+  const API_KEY = "AIzaSyBttL3_rUfMaP8vZQazT8bCd5XhHkmR4lA";
+  const baseUrl = "https://translation.googleapis.com/language/translate/v2";
 
-  var requestData = {
+  let requestData = {
     q: document.getElementById("inputText").value,
     target: document.getElementById("targetLang").value,
   };
@@ -17,17 +17,17 @@ function translation() {
 
 function translationResponse() {
   if (successfulRequest(this)) {
-    var response_json = JSON.parse(this.responseText);
-    var translated_text = "";
-    response_json["data"]["translations"].forEach(function (element) {
-      translated_text += element["translatedText"] + "\n";
+    let responseJSON = JSON.parse(this.responseText);
+    let translatedText = "";
+    responseJSON["data"]["translations"].forEach(function (element) {
+      translatedText += element["translatedText"] + "\n";
     });
-    document.getElementById("outputText").value = translated_text;
+    document.getElementById("outputText").value = translatedText;
   }
 }
 
 function sendRequest(method, url, handlerFunction, requestData) {
-  var xhttp = new XMLHttpRequest();
+  let xhttp = new XMLHttpRequest();
   xhttp.open(method, url);
   xhttp.onreadystatechange = handlerFunction;
   if (method == "POST") {
