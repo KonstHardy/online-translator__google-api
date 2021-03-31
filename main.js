@@ -27,7 +27,6 @@ function translationResponse() {
 }
 
 function clearText() {
-  console.log("test");
   let clearText = "";
   let translatedText = "";
   document.getElementById("textInput").value = clearText;
