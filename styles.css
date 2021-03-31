@@ -32,6 +32,7 @@ body {
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 .form__text {
@@ -47,7 +48,10 @@ body {
   resize: none;
 }
 .form__btn {
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 225px;
   height: 55px;
   padding: 0;
@@ -56,9 +60,38 @@ body {
   border-radius: 10px;
   font-size: 16px;
   font-weight: 600;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   background: #bababa;
-  /* background: #adb2df; */
   outline: none;
   cursor: pointer;
+  transition: letter-spacing 0.4s linear;
+}
+.form__btn:hover {
+  letter-spacing: 1.8px;
+}
+.form__btn:after,
+.form__btn:before {
+  position: absolute;
+  content: " ";
+  width: 15px;
+  height: 15px;
+  transition: width 0.5s, height 0.5s linear;
+}
+.form__btn:after {
+  top: 0;
+  left: 0;
+  border-top: 3px solid #000;
+  border-left: 3px solid #000;
+}
+.form__btn:before {
+  bottom: 0;
+  right: 0;
+  border-bottom: 3px solid #000;
+  border-right: 3px solid #000;
+}
+.form__btn:hover:before,
+.form__btn:hover:after {
+  width: 100%;
+  height: 100%;
 }
