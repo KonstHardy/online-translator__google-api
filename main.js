@@ -26,6 +26,14 @@ function translationResponse() {
   }
 }
 
+function clearText() {
+  console.log("test");
+  let clearText = "";
+  let translatedText = "";
+  document.getElementById("textInput").value = clearText;
+  document.getElementById("textOutput").value = translatedText;
+}
+
 function sendRequest(method, url, handlerFunction, requestData) {
   let xhttp = new XMLHttpRequest();
   xhttp.open(method, url);
