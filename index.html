@@ -13,14 +13,13 @@
       <form class="form">
         <div class="form__lang-block">
           <label class="form__label" for="textInput">Input text</label>
-          <button
-            class="btn form__btn-clear"
-            type="button"
-            onclick="clearText()"
-          ></button>
+          <button class="btn-clear btn" type="button" onclick="clearText()">
+            <span class="btn-clear__line"></span>
+            <span class="btn-clear__line"></span>
+          </button>
           <textarea class="form__text" name="text" id="textInput"></textarea>
         </div>
-        <button class="btn form__btn" type="button" onclick="translation()">
+        <button class="form__btn btn" type="button" onclick="translation()">
           Translation
         </button>
         <div class="form__lang-block">

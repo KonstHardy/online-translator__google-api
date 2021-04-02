@@ -46,21 +46,39 @@ body {
   outline: none;
   cursor: pointer;
 }
-.form__btn-clear {
+.btn-clear {
   position: absolute;
   top: 60px;
   right: 30px;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: none;
 }
-.form__btn-clear:hover {
+.btn-clear:hover {
   background: #efefef;
 }
+.btn-clear__line {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #8993ad;
+  transform: rotate(45deg);
+  top: 50%;
+  left: 5px;
+}
+.btn-clear__line:last-child {
+  transform: rotate(-45deg);
+}
+/* .btn-clear:hover > .btn-clear__line {
+  background: rgb(239, 239, 239, 0.5); 
+} */
 .form__text {
   display: block;
   width: 100%;
   height: 87%;
-  padding: 15px;
+  padding: 25px 30px;
   margin-top: 15px;
   border-radius: 15px;
   border: 1px solid #000;
