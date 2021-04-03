@@ -48,32 +48,34 @@ body {
 }
 .btn-clear {
   position: absolute;
-  top: 60px;
-  right: 30px;
+  top: 57px;
+  right: 25px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background: none;
+  transition: transform 0.2s linear;
 }
 .btn-clear:hover {
-  background: #efefef;
+  transform: rotate(180deg) scale(1.2);
 }
 .btn-clear__line {
   position: absolute;
   display: block;
   width: 20px;
   height: 2px;
-  background-color: #8993ad;
+  background: #8993ad;
   transform: rotate(45deg);
   top: 50%;
   left: 5px;
+  transform: width 0.15s linear;
 }
 .btn-clear__line:last-child {
   transform: rotate(-45deg);
 }
-/* .btn-clear:hover > .btn-clear__line {
-  background: rgb(239, 239, 239, 0.5); 
-} */
+.btn-clear:hover > .btn-clear__line {
+  background: #7b7b7b;
+}
 .form__text {
   display: block;
   width: 100%;
