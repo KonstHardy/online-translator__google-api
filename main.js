@@ -19,9 +19,11 @@ function translationResponse() {
   if (successfulRequest(this)) {
     let responseJSON = JSON.parse(this.responseText);
     let translatedText = "";
+
     responseJSON["data"]["translations"].forEach(function (element) {
       translatedText += element["translatedText"] + "\n";
     });
+
     document.getElementById("textOutput").value = translatedText;
   }
 }
@@ -29,6 +31,7 @@ function translationResponse() {
 function clearText() {
   let clearText = "";
   let translatedText = "";
+
   document.getElementById("textInput").value = clearText;
   document.getElementById("textOutput").value = translatedText;
 }
@@ -43,30 +46,30 @@ function listen() {
   if ("speechSynthesis" in window) {
     let msg = new SpeechSynthesisUtterance();
     let voices = window.speechSynthesis.getVoices();
+
     if (voices.length > 0) {
-      console.log("Your browser supports " + voices.length + " voices");
-      console.log(voices);
       msg.voice = voices.filter(function (voice) {
         return voice.lang == lang;
       })[1];
     }
+
     msg.voiceURI = "native";
-    msg.volume = 0.8; // 0 to 1
-    msg.rate = 0.6; // 0.1 to 10
-    msg.pitch = 0.6; //0 to 2
+    msg.volume = 1; // 0 to 1;
+    msg.rate = 1.5; // 0.1 to 10;
+    msg.pitch = 1.5; // 0 to 2;
     msg.text = text;
     msg.lang = lang;
-    msg.onend = function (e) {
-      console.log("Finished in " + e.elapsedTime + " milliseconds.");
-    };
+
     speechSynthesis.speak(msg);
   }
 }
 
 function sendRequest(method, url, handlerFunction, requestData) {
   let xhttp = new XMLHttpRequest();
+
   xhttp.open(method, url);
   xhttp.onreadystatechange = handlerFunction;
+
   if (method == "POST") {
     xhttp.send(requestData);
   } else {
