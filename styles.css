@@ -141,3 +141,17 @@ body {
   cursor: pointer;
   outline: none;
 }
+.btn-listen {
+  position: absolute;
+  right: 25px;
+  bottom: 27px;
+  width: 30px;
+  height: 30px;
+  background: url("./volume.png") no-repeat center;
+  background-size: 20px;
+  filter: opacity(0.7);
+}
+.btn-listen:hover {
+  background-size: 22px;
+  filter: none;
+}
