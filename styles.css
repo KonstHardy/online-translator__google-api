@@ -147,9 +147,10 @@ body {
   bottom: 27px;
   width: 30px;
   height: 30px;
-  background: url("./volume.png") no-repeat center;
+  background: url("./listen.png") no-repeat center;
   background-size: 20px;
   filter: opacity(0.7);
+  transition: background-size 0.05s;
 }
 .btn-listen:hover {
   background-size: 22px;
