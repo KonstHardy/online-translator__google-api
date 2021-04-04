@@ -33,6 +33,36 @@ function clearText() {
   document.getElementById("textOutput").value = translatedText;
 }
 
+function listen() {
+  let textOutput = document.getElementById("textOutput");
+  let targetLang = document.getElementById("targetLang");
+
+  let text = textOutput.value;
+  let lang = targetLang.value;
+
+  if ("speechSynthesis" in window) {
+    let msg = new SpeechSynthesisUtterance();
+    let voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      console.log("Your browser supports " + voices.length + " voices");
+      console.log(voices);
+      msg.voice = voices.filter(function (voice) {
+        return voice.lang == lang;
+      })[1];
+    }
+    msg.voiceURI = "native";
+    msg.volume = 0.8; // 0 to 1
+    msg.rate = 0.6; // 0.1 to 10
+    msg.pitch = 0.6; //0 to 2
+    msg.text = text;
+    msg.lang = lang;
+    msg.onend = function (e) {
+      console.log("Finished in " + e.elapsedTime + " milliseconds.");
+    };
+    speechSynthesis.speak(msg);
+  }
+}
+
 function sendRequest(method, url, handlerFunction, requestData) {
   let xhttp = new XMLHttpRequest();
   xhttp.open(method, url);
