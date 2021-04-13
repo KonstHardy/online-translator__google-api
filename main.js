@@ -28,6 +28,14 @@ function translationResponse() {
   }
 }
 
+function showClearBtn() {
+  if (document.getElementById("textInput").value.length > 0) {
+    document.querySelector(".btn-clear").hidden = false;
+  } else {
+    document.querySelector(".btn-clear").hidden = true;
+  }
+}
+
 function clearText() {
   let clearText = "";
   let translatedText = "";
