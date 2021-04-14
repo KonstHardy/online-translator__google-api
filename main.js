@@ -42,6 +42,8 @@ function clearText() {
 
   document.getElementById("textInput").value = clearText;
   document.getElementById("textOutput").value = translatedText;
+
+  showClearBtn();
 }
 
 function listen() {
