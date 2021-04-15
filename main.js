@@ -35,6 +35,8 @@ function showClearBtn() {
     document.querySelector(".btn-clear").hidden = false;
   } else {
     document.querySelector(".btn-clear").hidden = true;
+    document.querySelector(".btn-listen").hidden = true;
+    document.getElementById("textOutput").value = "";
   }
 }
 
@@ -57,7 +59,7 @@ function clearText() {
   showListenBtn();
 }
 
-function listen() {
+function listenTranslation() {
   let textOutput = document.getElementById("textOutput");
   let targetLang = document.getElementById("targetLang");
 
