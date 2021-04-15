@@ -25,6 +25,8 @@ function translationResponse() {
     });
 
     document.getElementById("textOutput").value = translatedText;
+
+    showListenBtn();
   }
 }
 
@@ -36,6 +38,15 @@ function showClearBtn() {
   }
 }
 
+function showListenBtn() {
+  if (document.getElementById("textOutput").value.length > 0) {
+    console.log(document.getElementById("textOutput").value.length);
+    document.querySelector(".btn-listen").hidden = false;
+  } else {
+    document.querySelector(".btn-listen").hidden = true;
+  }
+}
+
 function clearText() {
   let clearText = "";
   let translatedText = "";
@@ -44,6 +55,7 @@ function clearText() {
   document.getElementById("textOutput").value = translatedText;
 
   showClearBtn();
+  showListenBtn();
 }
 
 function listen() {
