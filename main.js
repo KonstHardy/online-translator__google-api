@@ -1,3 +1,40 @@
+const languages = [
+  {
+    name: "English",
+    value: "en",
+  },
+  {
+    name: "Russian",
+    value: "ru",
+  },
+  {
+    name: "French",
+    value: "fr",
+  },
+  {
+    name: "German",
+    value: "de",
+  },
+  {
+    name: "Korean",
+    value: "ko",
+  },
+  {
+    name: "Chinese",
+    value: "zh",
+  },
+  {
+    name: "Spanish",
+    value: "es",
+  },
+];
+
+languages.forEach((language) => {
+  document
+    .getElementById("targetLang")
+    .options.add(new Option(language.name, language.value));
+});
+
 function translation() {
   const API_KEY = "AIzaSyBttL3_rUfMaP8vZQazT8bCd5XhHkmR4lA";
   const baseUrl = "https://translation.googleapis.com/language/translate/v2";
@@ -77,9 +114,9 @@ function listenTranslation() {
     }
 
     msg.voiceURI = "native";
-    msg.volume = 1; // 0 to 1;
-    msg.rate = 1.5; // 0.1 to 10;
-    msg.pitch = 1.5; // 0 to 2;
+    msg.volume = 0.8; // 0 to 1;
+    msg.rate = 0.8; // 0.1 to 10;
+    msg.pitch = 0.8; // 0 to 2;
     msg.text = text;
     msg.lang = lang;
 
