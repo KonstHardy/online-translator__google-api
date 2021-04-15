@@ -24,7 +24,7 @@ function translationResponse() {
       translatedText += element["translatedText"] + "\n";
     });
 
-    document.getElementById("textOutput").value = translatedText;
+    document.getElementById("textOutput").value = translatedText.trim();
 
     showListenBtn();
   }
@@ -40,7 +40,6 @@ function showClearBtn() {
 
 function showListenBtn() {
   if (document.getElementById("textOutput").value.length > 0) {
-    console.log(document.getElementById("textOutput").value.length);
     document.querySelector(".btn-listen").hidden = false;
   } else {
     document.querySelector(".btn-listen").hidden = true;
