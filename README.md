@@ -10,3 +10,9 @@ Online translator allows to translate to 7 languages (English, Russian, French, 
 ### Preview
 
 ![Preview](./preview/preview.gif)
+
+
+## Live Demo
+
+Live Project URL: [online-translator__google-api](https://konsthardy.github.io/online-translator__google-api/)
+
